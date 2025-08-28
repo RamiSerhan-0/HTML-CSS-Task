@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="Page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../HTML-CSS-Res/image/logo.png"
+    />
+    <style>
+        
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="hdiv">
+        <div id="logo">
+          <img src="../HTML-CSS-Res/image/logo.png" alt="logo" />
+        </div>
+        <div id="nav">
+          <nav>
+            <a href="#Home">Home</a>
+            <a href="#About">About</a>
+            <a href="#Featured">Featured</a>
+            <a href="#Arrivals">Arrivals</a>
+            <a href="#Reviews">Reviews</a>
+            <a href="#Blog">Blog</a>
+          </nav>
+        </div>
+        <div id="search">
+          <i class="fa fa-search" aria-hidden="true"></i>
+
+          <i class="fa fa-heart" aria-hidden="true"></i>
+        </div>
+      </div>
+    </header>
+    <div id="mainContent">
+      <div id="Home">
+        <div id="Welcoming">
+          <div>
+            <h1>Welcome to</h1>
+            <h1 style="color: #089da6">Book Store</h1>
+          </div>
+
+          <p >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            molestias atque laborum non fuga ex deserunt. Exercitationem velit
+            ducimus praesentium, obcaecati hic voluptate id tenetur fuga illum
+            quidem omnis? Rerum?
+          </p>
+          <button >Learn more</button>
+        </div>
+
+        <div>
+          <img src="../HTML-CSS-Res/image/table.png" alt="" />
+        </div>
+      </div>
+      <div id="cardsRow">
+        <div class="card">
+          <i class="fa fa-shipping-fast fa-3x"></i>
+          <h3>Fast Delivery</h3>
+          <p>Get your orders delivered swiftly to your doorstep.</p>
+        </div>
+        <div class="card">
+          <i class="fa fa-headset fa-3x"></i>
+          <h3>24 x 7 Services</h3>
+          <p>Our support team is available around the clock for you.</p>
+        </div>
+        <div class="card">
+          <i class="fa fa-tags fa-3x"></i>
+          <h3>Best Deal</h3>
+          <p>Enjoy amazing discounts and unbeatable offers.</p>
+        </div>
+        <div class="card">
+          <i class="fa fa-lock fa-3x"></i>
+          <h3>Secure Payment</h3>
+          <p>Pay confidently with our fully secure payment system.</p>
+        </div>
+      </div>
+      <div id="About">
+        <div>
+          <img src="HTML-CSS-Res/image/about.png" alt="" />
+        </div>
+        <div id="Welcoming">
+          <div>
+            <h1>About Us</h1>
+            
+          </div>
+
+          <p >
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae cumque atque dolor corporis architecto.
+             Voluptate expedita molestias maxime officia natus consectetur dolor quisquam illo? Quis illum nostrum perspiciatis laboriosam perferendis?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Minus ad eius saepe architecto aperiam laboriosam voluptas nobis voluptates id amet eos repellat corrupti harum consectetur, 
+              dolorum dolore blanditiis quam quo.
+          </p>
+          <button >Learn more</button>
+        </div>
+      </div>
+      </div>
+      <div id="Featured">
+        <div id="title">
+          <h1>Featured Books</h1>
+        </div>
+        <div id="scrollBox">
+          <script>
+          const booksImages = 
+          [
+            "HTML-CSS-Res/image/book_1.jpg",
+            "HTML-CSS-Res/image/book_2.jpg",
+            "HTML-CSS-Res/image/book_3.jpg",
+            "HTML-CSS-Res/image/book_4.jpg",
+            "HTML-CSS-Res/image/book_5.jpg",
+            "HTML-CSS-Res/image/book_6.jpg",
+            "HTML-CSS-Res/image/book_7.png",
+            "HTML-CSS-Res/image/book_8.png",
+            "HTML-CSS-Res/image/book_9.jpg",
+            "HTML-CSS-Res/image/book_10.png",
+            "HTML-CSS-Res/image/book_11.jpg",
+            "HTML-CSS-Res/image/book_12.png",
+            "HTML-CSS-Res/image/book_13.png",
+            "HTML-CSS-Res/image/book_14.png",
+            "HTML-CSS-Res/image/book_15.png",
+          ];
+          const scrollBox = document.getElementById("scrollBox");
+          booksImages.forEach((src) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
+          <img src="${src}" alt="">
+          <h2>Featured Book</h2>
+          <p id="auth">Rami Serhan</p>
+          <p id="Genre">Thriller, Horror, Romance</p>
+          <h3>$25.99<sub>%30</sub></h3>
+          <button id="lernMoreBtn">Learn More</button>
+          
+        `;
+
+    scrollBox.appendChild(card);
+  });
+        </script>
+         
+        </div>
+      </div>
+      <div id="title">
+        <h1 style="margin-top: 50px;">New Arrivals</h1>
+      </div>
+      <div id="Arrivals">
+        <script>
+          const ArrivalsImgs = 
+          [
+            "HTML-CSS-Res/image/arrival_1.jpg",
+            "HTML-CSS-Res/image/arrival_2.jpg",
+            "HTML-CSS-Res/image/arrival_3.jpg",
+            "HTML-CSS-Res/image/arrival_4.jpg",
+            "HTML-CSS-Res/image/arrival_5.jpg",
+            "HTML-CSS-Res/image/arrival_6.jpg",
+            "HTML-CSS-Res/image/arrival_7.jpg",
+            "HTML-CSS-Res/image/arrival_8.webp",
+            "HTML-CSS-Res/image/arrival_9.jpg",
+            "HTML-CSS-Res/image/arrival_10.jpg",
+          ];
+          const Arrivals = document.getElementById("Arrivals");
+          ArrivalsImgs.forEach((src) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
+          <div id="arrimg">
+          <img src="${src}" alt="">
+          </div>
+          <h2>Featured Book</h2>
+          <p>New Arrival</p>
+          <div id="rate">
+          <i class="fa-solid fa-star fa-sm"></i>
+          <i class="fa-solid fa-star fa-sm"></i>
+          <i class="fa-solid fa-star fa-sm"></i>
+          <i class="fa-solid fa-star fa-sm"></i>
+          <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+          </div>
+          <button id="lernMoreBtn">Learn More</button>
+        `;
+
+    Arrivals.appendChild(card);
+  });
+        </script>
+      </div>
+      <div id="title">
+         <h1>Reviews</h1>
+      </div>
+     
+       <div id="Reviews">
+        <div class="card">
+          <div id="Reviewerbar">
+            <div>
+              <img src="HTML-CSS-Res/image/review_1.png" alt="" class="ReviewerImg">
+              <p>John Deo</p>
+            </div>
+            
+            <i class="fa fa-quote-right fa-5x" style="color: #EAEAEA;"></i>
+          </div>
+          <p> ipsum dolor sit amet, consectetur adipisicing elit. 
+          Natus eos doloribus iure distinctio! Eos dolorem quam, 
+          nisi amet saepe totam, quas quidem laboriosam dolore, 
+          tenetur itaque nostrum voluptas excepturi aut.</p>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+
+        </div>
+        <div class="card">
+          <div id="Reviewerbar">
+            <div>
+              <img src="HTML-CSS-Res/image/review_2.png" alt="" class="ReviewerImg">
+              <p>John Deo</p>
+            </div>
+            
+            <i class="fa fa-quote-right fa-5x" style="color: #EAEAEA;"></i>
+          </div>
+          <p> ipsum dolor sit amet, consectetur adipisicing elit. 
+          Natus eos doloribus iure distinctio! Eos dolorem quam, 
+          nisi amet saepe totam, quas quidem laboriosam dolore, 
+          tenetur itaque nostrum voluptas excepturi aut.</p>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+
+        </div>
+        <div class="card">
+          <div id="Reviewerbar">
+            <div>
+              <img src="HTML-CSS-Res/image/review_3.png" alt="" class="ReviewerImg">
+              <p>John Deo</p>
+            </div>
+            
+            <i class="fa fa-quote-right fa-5x" style="color: #EAEAEA;"></i>
+          </div>
+          <p> ipsum dolor sit amet, consectetur adipisicing elit. 
+          Natus eos doloribus iure distinctio! Eos dolorem quam, 
+          nisi amet saepe totam, quas quidem laboriosam dolore, 
+          tenetur itaque nostrum voluptas excepturi aut.</p>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+
+        </div>
+        <div class="card">
+          <div id="Reviewerbar">
+            <div>
+              <img src="HTML-CSS-Res/image/review_4.png" alt="" class="ReviewerImg">
+              <p>John Deo</p>
+            </div>
+            
+            <i class="fa fa-quote-right fa-5x" style="color: #EAEAEA;"></i>
+          </div>
+          <p> ipsum dolor sit amet, consectetur adipisicing elit. 
+          Natus eos doloribus iure distinctio! Eos dolorem quam, 
+          nisi amet saepe totam, quas quidem laboriosam dolore, 
+          tenetur itaque nostrum voluptas excepturi aut.</p>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star fa-sm"></i>
+         <i class="fa-solid fa-star-half-stroke fa-sm"></i>
+        </div>
+      </div>
+
+      <div id="banner">
+        <button>Learn More</button>
+      </div>
+      <div id="title">
+        <h1>Our Blog</h1>
+      </div>
+      <div id="Blog">
+        <div class="card">
+          <img src="HTML-CSS-Res/image/blog_1.jpg" alt="">
+          <div class="Bloger">
+            <h3 style="color: #089da6;">
+              Bloger
+            </h3>
+            <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Ipsam, quos quis quasi ut impedit reiciendis voluptatem rem esse ratione omnis, 
+              laudantium earum. 
+              Aperiam nesciunt dolore aliquam repellat consequatur amet ducimus.</p>
+            <div class="icons" >
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+              
+          </div>
+        </div>
+       <div class="card">
+          <img src="HTML-CSS-Res/image/blog_2.jpg" alt="">
+          <div class="Bloger">
+            <h3 style="color: #089da6;">
+              Bloger
+            </h3>
+            <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Ipsam, quos quis quasi ut impedit reiciendis voluptatem rem esse ratione omnis, 
+              laudantium earum. 
+              Aperiam nesciunt dolore aliquam repellat consequatur amet ducimus.</p>
+            <div class="icons" >
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+              
+          </div>
+        </div>
+        <div class="card">
+          <img src="HTML-CSS-Res/image/blog_3.jpg" alt="">
+          <div class="Bloger">
+            <h3 style="color: #089da6;">
+              Bloger
+            </h3>
+            <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Ipsam, quos quis quasi ut impedit reiciendis voluptatem rem esse ratione omnis, 
+              laudantium earum. 
+              Aperiam nesciunt dolore aliquam repellat consequatur amet ducimus.</p>
+            <div class="icons" >
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+            </div>
+              
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  <footer>
+    <div id="footerdiv">
+    <div class="footerSection">
+      <div id="logo">
+          <img src="../HTML-CSS-Res/image/logo.png" alt="logo" />
+      </div>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Est quaerat ipsa aspernatur ad sequi, dolore eveniet vitae quasi. 
+        Excepturi ipsa odio impedit sequi at hic velit, 
+        minus vero sint. Voluptas?
+      </p>
+    </div>
+    <div class="footerSection">
+      <h1>Quick Link</h1>
+      <div id="Links">
+      <a href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Featured">Featured</a>
+      <a href="#Arrivals">Arrivals</a>
+      <a href="#Reviews">Reviews</a>
+      <a href="#Blog">Blog</a>
+      </div>
+      
+    </div>
+    <div class="footerSection">
+      <h1>Contact Info</h1>
+      <p><i class="fa fa-phone" aria-hidden="true"></i>  +970 59 912 123</p>
+      <p><i class="fa fa-phone" aria-hidden="true"></i>  +970 59 912 123</p>
+      <p><i class="fa fa-envelope" aria-hidden="true"></i>  Rami@email.com</p>
+    </div>
+    <div class="footerSection">
+      <h1>Follow Us</h1>
+      <div id="SocialIcons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+    <div class="footerSection">
+        <h1>Newsletter</h1>
+        <form>
+          <input type="email" required placeholder="Your Email Id here" id="EmailTextBox"><br>
+          <input type="submit" value="Subscribe" id="EmailSubmit">
+        </form>
+      </div>
+    </div>
+  </footer> 
+  </body>
+  
+</html>

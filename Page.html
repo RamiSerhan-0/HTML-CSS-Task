@@ -18,10 +18,10 @@
         
     </style>
   </head>
-  <body>
+  <body >
     <header>
       <div id="hdiv">
-        <div id="logo">
+        <div class="logo">
           <img src="../HTML-CSS-Res/image/logo.png" alt="logo" />
         </div>
         <div id="nav">
@@ -36,8 +36,11 @@
         </div>
         <div id="search">
           <i class="fa fa-search" aria-hidden="true"></i>
-
-          <i class="fa fa-heart" aria-hidden="true"></i>
+          <i class="fa-solid fa-palette"></i>
+          <button id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode" class="icon-btn ">
+          <i class="fa-solid fa-moon"></i>
+          <i class="fa-solid fa-sun"></i>
+        </button>
         </div>
       </div>
     </header>
@@ -55,7 +58,7 @@
             ducimus praesentium, obcaecati hic voluptate id tenetur fuga illum
             quidem omnis? Rerum?
           </p>
-          <button >Learn more</button>
+          <button class="lrnMor">Learn more</button>
         </div>
 
         <div>
@@ -101,7 +104,7 @@
               Minus ad eius saepe architecto aperiam laboriosam voluptas nobis voluptates id amet eos repellat corrupti harum consectetur, 
               dolorum dolore blanditiis quam quo.
           </p>
-          <button >Learn more</button>
+          <button class="lrnMor">Learn more</button>
         </div>
       </div>
       </div>
@@ -202,7 +205,6 @@
               <img src="HTML-CSS-Res/image/review_1.png" alt="" class="ReviewerImg">
               <p>John Deo</p>
             </div>
-            
             <i class="fa fa-quote-right fa-5x" style="color: #EAEAEA;"></i>
           </div>
           <p> ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -278,7 +280,7 @@
       </div>
 
       <div id="banner">
-        <button>Learn More</button>
+        <button class="lrnMor">Learn More</button>
       </div>
       <div id="title">
         <h1>Our Blog</h1>
@@ -341,8 +343,8 @@
   <footer>
     <div id="footerdiv">
     <div class="footerSection">
-      <div id="logo">
-          <img src="../HTML-CSS-Res/image/logo.png" alt="logo" />
+      <div class="logo">
+          <img src="../HTML-CSS-Res/image/logo.png" alt="logo"  />
       </div>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
         Est quaerat ipsa aspernatur ad sequi, dolore eveniet vitae quasi. 
@@ -387,5 +389,19 @@
     </div>
   </footer> 
   </body>
-  
+  <script>
+    const btn = document.getElementById("themeToggle");
+    const savedstat = localStorage.getItem('theme')
+    if (savedstat === 'darkmode' || (!savedstat && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.body.classList.add('darkmode');
+  }
+    btn.setAttribute('aria-pressed', document.body.classList.contains('darkmode'));
+    btn.addEventListener('click',
+      () => {
+        document.body.classList.toggle('darkmode');
+        const isDark = document.body.classList.contains('darkmode');
+        btn.setAttribute('aria-pressed', isDark);
+        localStorage.setItem('theme', isDark ? 'darkmode' : 'light');
+      });
+  </script>
 </html>

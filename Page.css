@@ -1,5 +1,30 @@
+:root{
+  --bgcolor: white;
+  --textcolor: black;
+  --cardbg: white;
+  --lrnMor-btnhover: white;
+  --footerbg: #eaeaea;
+  *{
+    color: black;
+  }
+  
+}
+body.darkmode{
+  --bgcolor: black;
+  --textcolor: white;
+  --cardbg: black;
+  --lrnMor-btnhover: black;
+  --footerbg: black;
+  #themeToggle i.fa-moon{display: none;}
+  #themeToggle i.fa-sun{display: inline;}
+  *{
+    color: white;
+  }
+}
 body {
   font-family: Arial, sans-serif;
+  background-color: var(--bgcolor);
+  color: var(--textcolor);
 }
 
 ::-webkit-scrollbar {
@@ -23,6 +48,7 @@ body {
 }
 
 header {
+  background-color: var(--bgcolor);
   margin-bottom: 5px;
   position: fixed;
   top: 0;
@@ -31,40 +57,80 @@ header {
   z-index: 1000;
   box-shadow: 0 1px 4px #089da6;
   padding: 15px;
-  background: #fff;
 }
 #hdiv {
+  background-color: var(--cardbg);
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-}
-#logo {
-  width: 60px;
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-#nav {
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
+  
+  #nav {
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
 
-  a {
-    margin: 0 10px;
-    color: black;
-    text-decoration: none;
+    a {
+      position: relative;
+      text-decoration: none;
+      margin: 0 10px;
+      padding-bottom: 5px;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        transform-origin: center;
+        width: 100%;
+        height: 2px;
+        background-color: #089da6;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover::after {
+        transform: translateX(-50%) scaleX(1);
+      }
+    }
   }
+
+  .logo {
+    width: 60px;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+.card{
+   background-color: var(--cardbg);
 }
 #search {
   i {
     margin-left: 10px;
+    cursor: pointer;
+  }
+  .icon-btn {
+    border: none;
+    background: transparent;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+  }
+  .icon-btn i:last-child {
+    display: none;
+  }
+  body.dark .icon-btn i:first-child {
+    display: none;
+  }
+  body.dark .icon-btn i:last-child {
+    display: inline;
   }
 }
 #mainContent {
-  
   #Home {
     background-image: url("HTML-CSS-Res/image/bg.png");
     background-size: cover;
@@ -106,7 +172,7 @@ header {
       font-size: 20px;
       border: none;
       padding: 10px;
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
@@ -136,7 +202,6 @@ header {
     flex: 1;
     min-width: 200px;
     max-width: 23%;
-    background-color: #fff;
     padding: 15px;
     box-sizing: border-box;
     box-shadow: 0 0 6px #089da6;
@@ -245,7 +310,6 @@ header {
   }
 }
 #banner {
-
   width: 100%;
   margin-top: 50px;
   height: 50vh;
@@ -253,7 +317,7 @@ header {
   background-size: 100%;
   background-repeat: no-repeat;
   align-items: flex-end;
-  button{
+  button {
     padding: 8px 20px;
     background-color: #089da6;
     color: white;
@@ -270,10 +334,9 @@ header {
   margin: 20px 0;
   flex-wrap: wrap;
   .card {
-    background-color: #fff;
     flex: 1;
     height: fit-content;
-    box-shadow: 0 0 7px black;
+    box-shadow: 0 0 7px var(--textcolor);
   }
   img {
     width: 100%;
@@ -287,11 +350,10 @@ header {
     justify-content: space-between;
     i {
       color: #089da6;
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
     }
-
   }
 }
 
@@ -299,41 +361,53 @@ header {
   padding: 30px;
   display: flex;
   justify-content: space-around;
-  gap: 8%;
-  background-color: #EAEAEA;
+  gap: 6%;
+  background-color: var(--footerbg);
   .footerSection {
     flex: 1;
+    .logo {
+    width: 100px;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
     #Links {
       display: flex;
       flex-direction: column;
       a {
         text-decoration: none;
-        color: black;
         margin: 1.5px 0;
       }
     }
     #SocialIcons {
-      i{
+      i {
         margin: 0 4px;
       }
-      i:hover{
+      i:hover {
         color: #089da6;
         cursor: pointer;
       }
     }
-    #EmailTextBox{
-      background-color: #C9C9C9;
-      border-radius: 25px; 
+    #EmailTextBox {
+      background-color: #c9c9c9;
+      border-radius: 25px;
       padding: 10px;
       width: 80%;
       border: none;
     }
-    #EmailSubmit{
+    #EmailSubmit {
       background-color: #089da6;
       padding: 10px;
       margin-top: 5px;
       border-radius: 25px;
       border: none;
     }
+  }
+}
+.lrnMor{
+  &:hover{
+    background-color: var(--lrnMor-btnhover);
   }
 }

@@ -37,7 +37,7 @@
         <div id="search">
           <i class="fa fa-search" aria-hidden="true"></i>
           <i class="fa-solid fa-palette"></i>
-          <button id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode" class="icon-btn ">
+          <button id="themeToggle" class="icon-btn ">
           <i class="fa-solid fa-moon"></i>
           <i class="fa-solid fa-sun"></i>
         </button>
@@ -391,17 +391,17 @@
   </body>
   <script>
     const btn = document.getElementById("themeToggle");
-    const savedstat = localStorage.getItem('theme')
-    if (savedstat === 'darkmode' || (!savedstat && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.body.classList.add('darkmode');
-  }
-    btn.setAttribute('aria-pressed', document.body.classList.contains('darkmode'));
-    btn.addEventListener('click',
-      () => {
-        document.body.classList.toggle('darkmode');
-        const isDark = document.body.classList.contains('darkmode');
-        btn.setAttribute('aria-pressed', isDark);
-        localStorage.setItem('theme', isDark ? 'darkmode' : 'light');
-      });
+    const saved = localStorage.getItem('theme');
+
+    if (saved === 'darkmode' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.body.classList.add('darkmode');
+    } else {
+      document.body.classList.remove('darkmode');
+    }
+
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('darkmode');
+      localStorage.setItem('theme', document.body.classList.contains('darkmode') ? 'darkmode' : 'light');
+    });
   </script>
 </html>

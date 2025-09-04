@@ -389,19 +389,5 @@
     </div>
   </footer> 
   </body>
-  <script>
-    const btn = document.getElementById("themeToggle");
-    const savedstat = localStorage.getItem('theme')
-    if (savedstat === 'darkmode' || (!savedstat && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.body.classList.add('darkmode');
-    }
-    else {
-      document.body.classList.remove('darkmode');
-    }
-    btn.setAttribute('aria-pressed', document.body.classList.contains('darkmode'));
-    btn.addEventListener('click', () => {
-  document.body.classList.toggle('darkmode');
-  localStorage.setItem('theme', document.body.classList.contains('darkmode') ? 'darkmode' : 'light');
-});
-  </script>
+  
 </html>

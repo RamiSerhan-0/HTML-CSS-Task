@@ -18,7 +18,7 @@
         
     </style>
   </head>
-  <body >
+  <body id="pageBody" >
     <header>
       <div id="hdiv">
         <div class="logo">
@@ -35,8 +35,15 @@
           </nav>
         </div>
         <div id="search">
-          <i class="fa fa-search" aria-hidden="true"></i>
-          <i class="fa-solid fa-palette"></i>
+          <input type="text" style="display: none;" id="searchbar" placeholder="Search">
+          <i class="fa fa-search" aria-hidden="true" id="srchicon"></i>
+          
+          <div style="position: relative; display: inline-block;">
+            <i class="fa-solid fa-palette" id="colorPickerIcon" ></i>
+            <input type="color" id="colorPicker" style="position: absolute; top: 35px; height: 0; width: 0; border: none; padding: 0; margin: 0;">
+          </div>  
+
+          
           <button id="themeToggle" class="icon-btn ">
           <i class="fa-solid fa-moon"></i>
           <i class="fa-solid fa-sun"></i>
@@ -51,7 +58,6 @@
             <h1>Welcome to</h1>
             <h1 style="color: #089da6">Book Store</h1>
           </div>
-
           <p >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
             molestias atque laborum non fuga ex deserunt. Exercitationem velit
@@ -289,7 +295,7 @@
         <div class="card">
           <img src="HTML-CSS-Res/image/blog_1.jpg" alt="">
           <div class="Bloger">
-            <h3 style="color: #089da6;">
+            <h3>
               Bloger
             </h3>
             <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -306,7 +312,7 @@
        <div class="card">
           <img src="HTML-CSS-Res/image/blog_2.jpg" alt="">
           <div class="Bloger">
-            <h3 style="color: #089da6;">
+            <h3>
               Bloger
             </h3>
             <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -323,7 +329,7 @@
         <div class="card">
           <img src="HTML-CSS-Res/image/blog_3.jpg" alt="">
           <div class="Bloger">
-            <h3 style="color: #089da6;">
+            <h3>
               Bloger
             </h3>
             <p style="margin-bottom: 2px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -383,7 +389,7 @@
         <h1>Newsletter</h1>
         <form>
           <input type="email" required placeholder="Your Email Id here" id="EmailTextBox"><br>
-          <input type="submit" value="Subscribe" id="EmailSubmit">
+          <input type="submit" value="Subscribe" id="EmailSubmit" class="lrnMor">
         </form>
       </div>
     </div>
@@ -402,6 +408,24 @@
     btn.addEventListener('click', () => {
       document.body.classList.toggle('darkmode');
       localStorage.setItem('theme', document.body.classList.contains('darkmode') ? 'darkmode' : 'light');
+    });
+    const colorPicker = document.getElementById("colorPicker");
+    const icon = document.getElementById("colorPickerIcon");
+
+    icon.addEventListener("click", () => {
+      colorPicker.click();
+    });
+
+    colorPicker.addEventListener("input", (e) => {
+      const pickedColor = e.target.value;
+      document.documentElement.style.setProperty("--pickedcolor", pickedColor);
+    });
+
+    const searchicone = document.getElementById("srchicon");
+    searchicone.addEventListener("click", () =>
+    {
+      const searchbar = document.getElementById("searchbar");
+      searchbar.style.display = "inline";
     });
   </script>
 </html>
